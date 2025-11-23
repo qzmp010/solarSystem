@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <h1>The Solar System</h1>
+        <%- include('partials/nav.ejs') %>
+        <h2>NASA Image of the Day</h2>
+        <h3><%= nasa.title %></h3>
+        <figure>
+            <figcaption><%= nasa.explanation %></figcaption>
+            <img src="<%= nasa.url %>" alt="<%= nasa.explanation %>">
+        </figure>
+        <%- include('partials/footer.ejs') %>
+    </body>
+
+</html>
