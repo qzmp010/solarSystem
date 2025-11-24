@@ -105,7 +105,11 @@ app.get('/neptune', (req, res) => {
 
 app.get('/nasa', async (req, res) => {
     const apiKey = 'BgDdlu9gwzekridpgp4Ey61W3eRhNKJwKW5G0jO2';
-    const today = new Date();
+    const today = new Date(
+        new Date().toLocaleString('en-US', {
+            timeZone: 'America/Los_Angeles'
+        })
+    );
     let date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
     let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
     let response = await fetch(url);
