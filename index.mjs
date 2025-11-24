@@ -31,6 +31,8 @@ const getPlanetHelper = (name) => {
             break;
         case 'mars':
             planet = planets.getMars();
+            //fix broken image link
+            planet.image = "https://en.wikipedia.org/wiki/Mars#/media/File:Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png";
             break;
         case 'jupiter':
             planet = planets.getJupiter();
@@ -95,7 +97,7 @@ app.get('/neptune', (req, res) => {
 });
 
 app.get('/nasa', async (req, res) => {
-    const apiKey = '9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD';
+    const apiKey = 'BgDdlu9gwzekridpgp4Ey61W3eRhNKJwKW5G0jO2';
     const today = new Date();
     let date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
     let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
