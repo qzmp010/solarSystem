@@ -2,37 +2,61 @@
 <html>
 <%- include('partials/head.ejs') %>
 
-<body>
-    <h1>The Solar System</h1>
-    <%- include('partials/nav.ejs') %>
+    <body>
+        <h1>The Solar System</h1>
+        <%- include('partials/nav.ejs') %>
+            <div class="card text-bg-secondary m-5">
 
-    <h2>Planet <%= planet.name %></h2>
-    <p>
-        <%= planet.description %>
-    </p>
-    <div>
-        <dl>
-            <dt>Distance from the Sun: </dt>
-            <dd><%= planet.distanceFromSun %></dd>
-            <dt>Length of Year: </dt>
-            <dd><%= planet.yearLength %></dd>
-            <dt>Radius: </dt>
-            <dd><%= planet.radius %> miles</dd>
-            <dt>Length of Day: </dt>
-            <dd><%= planet.oneEarthDay %></dd>
-            <dt>Number of Moons: </dt>
-            <dd><%= planet.moons %></dd>
-            <dt>Website: </dt>
-            <dd>
-                <a href="<%= planet.websiteLink %>" target="_blank">
-                    More information about <%= planet.name %>
-                </a>
-            </dd>
-        </dl>
-    </div>
-    <img src="<%= planet.image %>">
+                <h2 class="card-header text-bg-dark p-3">
+                    Planet <%= planet.name %>
+                </h2>
 
-    <%- include('partials/footer.ejs') %>
-</body>
+                <div class="card-body p-3">
+                    <div class="row mb-4">
+                        <div class="col-lg-6 mx-auto">
+                            <p class="text-start">
+                                <%= planet.description %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <dl class="row text-start">
+                                <dt class="col-sm-6">Distance from the Sun: </dt>
+                                <dd class="col-sm-6">
+                                    <%= planet.distanceFromSun %>
+                                </dd>
+                                <dt class="col-sm-6">Length of Year: </dt>
+                                <dd class="col-sm-6">
+                                    <%= planet.yearLength %>
+                                </dd>
+                                <dt class="col-sm-6">Radius: </dt>
+                                <dd class="col-sm-6">
+                                    <%= planet.radius %> miles
+                                </dd>
+                                <dt class="col-sm-6">Length of Day: </dt>
+                                <dd class="col-sm-6">
+                                    <%= planet.oneEarthDay %>
+                                </dd>
+                                <dt class="col-sm-6">Number of Moons: </dt>
+                                <dd class="col-sm-6">
+                                    <%= planet.moons %>
+                                </dd>
+                                <dt class="col-sm-6">Website: </dt>
+                                <dd class="col-sm-6">
+                                    <a class="link-info" href="<%= planet.websiteLink %>" target="_blank">
+                                        More information about <%= planet.name %>
+                                    </a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <img class="cardImg" src="<%= planet.image %>" alt="<%= planet.name %>">
+                </div>
+            </div>
+
+            <%- include('partials/footer.ejs') %>
+    </body>
 
 </html>

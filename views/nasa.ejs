@@ -3,14 +3,23 @@
 <%- include('partials/head.ejs') %>
 
     <body>
-        <h1>The Solar System</h1>
+        <h1 class="bg-body-tertiary">The Solar System</h1>
         <%- include('partials/nav.ejs') %>
-        <h2>NASA Image of the Day</h2>
-        <h3><%= nasa.title %></h3>
-        <figure>
-            <figcaption><%= nasa.explanation %></figcaption>
-            <img src="<%= nasa.url %>" alt="<%= nasa.explanation %>">
-        </figure>
+
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card m-5">
+                    <h2 class="card-header p-3">NASA Image of the Day</h2>
+                    <div class="card-body p-3">
+                        <h3><%= nasa.title %></h3>
+                        <figure>
+                            <figcaption class="text-start mb-4"><%= nasa.explanation %></figcaption>
+                            <img class="cardImg" src="<%= nasa.url %>" alt="<%= nasa.explanation %>">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
         <%- include('partials/footer.ejs') %>
     </body>
 
