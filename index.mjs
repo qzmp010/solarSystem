@@ -39,7 +39,7 @@ const getPlanetHelper = (name) => {
         case 'mars':
             planet = planets.getMars();
             //fix broken image link
-            planet.image = "https://en.wikipedia.org/wiki/Mars#/media/File:Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png";
+            planet.image = "https://upload.wikimedia.org/wikipedia/commons/0/0c/Mars_-_August_30_2021_-_Flickr_-_Kevin_M._Gill.png";
             break;
         case 'jupiter':
             planet = planets.getJupiter();
