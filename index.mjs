@@ -110,6 +110,8 @@ app.get('/nasa', async (req, res) => {
     let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
     let response = await fetch(url);
     let data = await response.json();
+    console.log(date);
+    console.log(data);
     const nasa = {
         title: data.title,
         explanation: data.explanation,
