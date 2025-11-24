@@ -6,11 +6,18 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get('/', async (req, res) => {
-    let apiKey = "7756a1e81f817c186cf57294e1c19b37b49c54b8f34e7c499ee0ce5cd86cd16e";
-    let url = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&featured=true&query=solar-system`;
-    let response = await fetch(url);
-    let data = await response.json();
-    let randomImage = data.urls.full;
+    let randomImage;
+    try {
+        //let apiKey = "7756a1e81f817c186cf57294e1c19b37b49c54b8f34e7c499ee0ce5cd86cd16e";
+        let apiKey = "aHzCm7p89Sp87H7h_oZc8eyXMXstvdK7HxwTfXvrvKY";
+        let url = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&featured=true&query=solar-system`;
+        let response = await fetch(url);
+        let data = await response.json();
+        randomImage = data.urls.full;
+    } catch {
+        //default image if rate limit exceeded
+        randomImage = "https://upload.wikimedia.org/wikipedia/commons/4/43/PIA22835-VoyagerProgram%26Heliosphere-Chart-20181210.png";
+    }
     res.render("index", { "image": randomImage })
 });
 
